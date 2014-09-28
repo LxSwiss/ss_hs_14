@@ -8,16 +8,14 @@
 #ifndef EMPLOYEERE_HPP_
 #define EMPLOYEERE_HPP_
 
-using std::string;
-
 struct Employee {
 	std::string last_name;
 	std::string first_name;
 	long salary;
 	int age;
 	int clearance_level;
-	Employee(string _last_name, string _first_name,
-			long _salary, int _age, int _clearance_level){
+	Employee(std::string _last_name, std::string _first_name, long _salary, int _age,
+			int _clearance_level) {
 		last_name = _last_name;
 		first_name = _first_name;
 		salary = _salary;
@@ -26,15 +24,15 @@ struct Employee {
 	}
 };
 
-inline bool operator<(const Employee& lhs, const Employee& rhs) {
-	return lhs.salary > rhs.salary;
-}
 inline std::ostream& operator<<(std::ostream& ostream,
 		const Employee& employee) {
-	return ostream << employee.last_name << " "
-			<< employee.first_name << " " << employee.salary
-			<< " " << employee.age << " "
+	return ostream << employee.last_name << " " << employee.first_name << " "
+			<< employee.salary << " " << employee.age << " "
 			<< employee.clearance_level;
+}
+
+inline bool operator<(const Employee& lhs, const Employee& rhs) {
+	return lhs.salary > rhs.salary;
 }
 
 #endif /* EMPLOYEE_H_ */
