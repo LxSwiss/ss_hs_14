@@ -8,6 +8,9 @@
 #ifndef EMPLOYEERE_HPP_
 #define EMPLOYEERE_HPP_
 
+#include <string>
+#include <iostream>
+
 struct Employee {
 	std::string last_name;
 	std::string first_name;
